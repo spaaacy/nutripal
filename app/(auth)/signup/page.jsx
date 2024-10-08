@@ -4,8 +4,8 @@ import { UserContext } from "@/context/UserContext";
 import { supabase } from "@/utils/supabase";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
+import Footer from "@/components/common/Footer";
+import NavBar from "@/components/common/NavBar";
 import Link from "next/link";
 
 const Page = () => {
@@ -22,6 +22,8 @@ const Page = () => {
     e.preventDefault();
     if (!session || session.data.session) return;
     try {
+      if (formData.password !== formData.confirmPassword) throw Error("Passwords do not match");
+
       const { data: authData, error } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,

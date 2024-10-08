@@ -4,8 +4,8 @@ import { UserContext } from "@/context/UserContext";
 import { supabase } from "@/utils/supabase";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
+import Footer from "@/components/common/Footer";
+import NavBar from "@/components/common/NavBar";
 import Link from "next/link";
 
 const Page = () => {
