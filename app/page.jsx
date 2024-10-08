@@ -1,7 +1,7 @@
 "use client";
 
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
+import Footer from "@/components/common/Footer";
+import NavBar from "@/components/common/NavBar";
 
 export default function Home() {
   return (
