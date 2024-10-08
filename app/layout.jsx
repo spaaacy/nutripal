@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "",
+  title: "NutriPal",
 };
 
 export default function RootLayout({ children }) {

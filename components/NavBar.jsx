@@ -29,7 +29,7 @@ const NavBar = () => {
       <div className="flex items-center bg-gray-800 py-2 px-8 text-white">
         <Link href="/" className="flex items-center justify-center">
           <Image src="/logo.png" width={50} height={50} alt="logo" />
-          <span className="font-semibold text-2xl ml-2">CalSync</span>
+          <span className="font-semibold text-2xl ml-2">NutriPal</span>
         </Link>
 
         {showSignIn && (
