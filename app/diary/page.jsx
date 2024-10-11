@@ -7,6 +7,13 @@ import { useState } from "react";
 
 const Page = () => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
+  const [meals, setMeals] = useState({
+    breakfast: "",
+    lunch: "",
+    dinner: ""
+});
+
 
   return (
     <div className="flex flex-col min-h-screen">
