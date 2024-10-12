@@ -15,7 +15,7 @@ const Page = () => {
 });
 
 function handleDateChange(event) {
-  const newDate = event.targer.value;
+  const newDate = event.target.value;
   setSelectedDate(newDate);
 }
 
@@ -32,10 +32,54 @@ function handleMealChange(event) {
   return (
     <div className="flex flex-col min-h-screen">
       <NavBar />
-      <main>Diary</main>
+      
+      <main>
+        <h1>Food Diary</h1>
+        <label>
+          Select Date:
+          <input type="date" value={selectedDate} onChange = {handleDateChange} />
+        </label>
+
+        <div>
+          <h2>Meals for {selectedDate}</h2>
+
+          <label>
+            Breakfast:
+            <input
+              type = "text"
+              name = "breakfast"
+              value = {meals.breakfast}
+              onChange = {handleMealChange}
+              />
+          </label>
+
+          <label>
+            Lunch:
+            <input
+              type = "text"
+              name = "lunch"
+              value = {meals.lunch}
+              onChange = {handleMealChange}
+            />
+          </label>
+
+          <label>
+            Dinner:
+            <input
+              type = "text"
+              name = "lunch"
+              value = {meals.dinner}
+              onChange = {handleMealChange}
+            />
+          </label>
+
+        </div>
+      </main>
       {showModal && <DiaryModal />}
       <Footer />
     </div>
+
+
   );
 };
 
