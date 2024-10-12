@@ -14,6 +14,20 @@ const Page = () => {
     dinner: ""
 });
 
+function handleDateChange(event) {
+  const newDate = event.targer.value;
+  setSelectedDate(newDate);
+}
+
+function handleMealChange(event) {
+  const { name, value } = event.target;
+  setMeals(function(prevMeals) {
+    return {
+      ...prevMeals,
+      [name]:value
+    };
+  });
+}
 
   return (
     <div className="flex flex-col min-h-screen">
