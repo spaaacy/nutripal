@@ -67,47 +67,57 @@ const Page = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-gray-100">
       <NavBar />
 
-      <main>
-        <h1 className="font-bold text-xl">Sign Up</h1>
-        <form className="flex flex-col" onSubmit={onSubmit}>
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            placeholder="you@example.com"
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            placeholder="Password"
-          />
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input
-            type="password"
-            name="confirmPassword"
-            id="confirmPassword"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-            placeholder="Confirm Password"
-          />
-          <button type="submit">Submit</button>
-          <Link href={"/signin"} className="text-sm text-blue-500 hover:underline">
-            Already have an account? Sign in.
-          </Link>
-        </form>
+      <main className="flex flex-col items-center justify-center flex-grow p-6">
+        <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
+          <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">Create Your Account</h1>
+          <form className="flex flex-col gap-4" onSubmit={onSubmit}>
+            <label htmlFor="email" className="text-gray-600 font-medium">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="you@example.com"
+              className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+            <label htmlFor="password" className="text-gray-600 font-medium">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              placeholder="Enter your password"
+              className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+            <label htmlFor="confirmPassword" className="text-gray-600 font-medium">Confirm Password</label>
+            <input
+              type="password"
+              name="confirmPassword"
+              id="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              required
+              placeholder="Re-enter your password"
+              className="px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 outline-none"
+            />
+            <button
+              type="submit"
+              className="bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            >
+              Sign Up
+            </button>
+            <Link href={"/signin"} className="text-center text-blue-500 hover:underline">
+              Already have an account? Sign in.
+            </Link>
+          </form>
+        </div>
       </main>
 
       <Footer />
