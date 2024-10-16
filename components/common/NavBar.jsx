@@ -25,21 +25,27 @@ const NavBar = () => {
   };
 
   return (
-    <nav>
-      <div className="flex items-center bg-gray-800 py-2 px-8 text-white">
-        <Link href="/" className="flex items-center justify-center">
-          <Image src="/logo.png" width={50} height={50} alt="logo" />
-          <span className="font-semibold text-2xl ml-2">NutriPal</span>
+    <nav className="bg-white border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Logo Section */}
+        <Link href="/" className="flex items-center">
+          <Image src="/logo.png" width={50} height={50} alt="NutriPal Logo" />
+          <span className="font-semibold text-2xl ml-2 text-gray-800">NutriPal</span>
         </Link>
 
+        {/* Sign In / Sign Out Links */}
         {showSignIn && (
           <div className="ml-auto">
             {session?.data.session ? (
-              <button onClick={signOut} type="button" className="hover:underline">
+              <button
+                onClick={signOut}
+                type="button"
+                className="text-sm text-gray-600 hover:text-gray-900 transition underline underline-offset-4"
+              >
                 Sign Out
               </button>
             ) : (
-              <Link href="/signin" className="hover:underline">
+              <Link href="/signin" className="text-sm text-gray-600 hover:text-gray-900 transition underline underline-offset-4">
                 Sign In
               </Link>
             )}
