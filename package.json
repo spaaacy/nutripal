@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.4",
     "@supabase/supabase-js": "^2.45.4",
     "next": "14.2.14",
     "react": "^18",
